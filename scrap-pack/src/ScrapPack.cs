@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using GameNetcodeStuff;
+using UnityEngine;
 
 namespace ScrapPack
 {
@@ -12,7 +13,7 @@ namespace ScrapPack
 
         //public ParticleSystem smokeTrailParticle;
 
-        //private PlayerControllerB previousPlayerHeldBy;
+        private PlayerControllerB previousPlayerHeldBy;
 
         //private float noiseInterval;
 
@@ -21,6 +22,9 @@ namespace ScrapPack
         public Transform backPart;
         public Vector3 backPartPositionOffset;
         public Vector3 backPartRotationOffset;
+
+		public float upMultiplier = 25;
+		public float forwardMultiplier = 50;
 
         public override void ItemActivate(bool used, bool buttonDown = true)
         {
@@ -36,19 +40,23 @@ namespace ScrapPack
 
         private void ActivateJetpack()
         {
-            playerHeldBy.syncFullRotation = playerHeldBy.transform.eulerAngles;
-            playerHeldBy.externalForces += Vector3.up * 100;
+            if (playerHeldBy != null && !playerHeldBy.isPlayerDead)
+            {
+                playerHeldBy.syncFullRotation = playerHeldBy.transform.eulerAngles;
+                playerHeldBy.externalForceAutoFade += (backPart.transform.up * upMultiplier) + (backPart.transform.forward * forwardMultiplier);
+            }
         }
-        /*
-	public override void DiscardItem()
-	{
-		Debug.Log($"Owner of jetpack?: {base.IsOwner}");
-		Debug.Log($"Is dead?: {playerHeldBy.isPlayerDead}");
-		if (base.IsOwner && playerHeldBy.isPlayerDead && !jetpackBroken && playerHeldBy.jetpackControls)
-		    ExplodeJetpackServerRpc();
-		base.DiscardItem();
-	}
 
+        public override void DiscardItem()
+        {
+            Debug.Log($"Owner of jetpack?: {base.IsOwner}");
+            Debug.Log($"Is dead?: {playerHeldBy.isPlayerDead}");
+            //if (base.IsOwner && playerHeldBy.isPlayerDead && !jetpackBroken && playerHeldBy.jetpackControls)
+            //    ExplodeJetpackServerRpc();
+            base.DiscardItem();
+        }
+
+        /*
 	[ServerRpc(RequireOwnership = false)]
 	public void ExplodeJetpackServerRpc()
 	{
@@ -88,14 +96,15 @@ namespace ScrapPack
 				Landmine.SpawnExplosion(base.transform.position, spawnExplosionEffect: true, 5f, 7f);
 			}
 		}
-	}
+	}*/
 
-	public override void EquipItem()
-	{
-		base.EquipItem();
-		previousPlayerHeldBy = playerHeldBy;
-	}
+        public override void EquipItem()
+        {
+            base.EquipItem();
+            previousPlayerHeldBy = playerHeldBy;
+        }
 
+        /*
 	public override void Update()
 	{
 		base.Update();
@@ -189,7 +198,7 @@ namespace ScrapPack
                 vector = playerHeldBy.lowerSpine.rotation * vector;
                 backPart.position += vector;
             }
-			else
+            else
             {
                 backPart.localPosition = Vector3.zero;
                 backPart.localEulerAngles = Vector3.zero;
@@ -229,11 +238,11 @@ namespace ScrapPack
 			((JetpackItem)target).ExplodeJetpackClientRpc();
 			target.__rpc_exec_stage = __RpcExecStage.None;
 		}
-	}
-
-	protected internal override string __getTypeName()
-	{
-		return "JetpackItem";
 	}*/
+
+        protected override string __getTypeName()
+        {
+            return "ScrapPack";
+        }
     }
 }
