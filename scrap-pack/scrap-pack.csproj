@@ -36,20 +36,20 @@
     <ItemGroup>
 	<!-- <Reference Include="netstandard" /> -->
         <Reference Include="LethalLib">
-	  <HintPath>..\..\lc-ref\BepInEx\plugins\LethalLib\LethalLib.dll</HintPath>
-	  <Private>false</Private>
+          <HintPath>..\..\lc-ref\BepInEx\plugins\LethalLib\LethalLib.dll</HintPath>
+          <Private>False</Private>
         </Reference>
         <Reference Include="Assembly-CSharp">
-	  <HintPath>..\..\lc-ref\Managed\Assembly-CSharp.dll</HintPath>
-	  <Private>false</Private>
+          <HintPath>..\..\lc-ref\Managed\Assembly-CSharp.dll</HintPath>
+          <Private>False</Private>
         </Reference>
         <Reference Include="BepInEx">
           <HintPath>..\..\lc-ref\BepInEx\core\BepInEx.dll</HintPath>
-	  <Private>false</Private>
+          <Private>False</Private>
         </Reference>
         <Reference Include="Harmony">
           <HintPath>..\..\lc-ref\BepInEx\core\0Harmony.dll</HintPath>
-	  <Private>false</Private>
+          <Private>False</Private>
         </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
@@ -57,31 +57,35 @@
         <Reference Include="System.Xml" />
         <Reference Include="UnityEngine">
           <HintPath>..\..\lc-ref\Managed\UnityEngine.dll</HintPath>
-	  <Private>false</Private>
+          <Private>False</Private>
         </Reference>
         <Reference Include="UnityEngine.PhysicsModule">
           <HintPath>..\..\lc-ref\Managed\UnityEngine.PhysicsModule.dll</HintPath>
-	  <Private>false</Private>
+          <Private>false</Private>
         </Reference>
         <Reference Include="UnityEngine.CoreModule">
           <HintPath>..\..\lc-ref\Managed\UnityEngine.CoreModule.dll</HintPath>
-	  <Private>false</Private>
+          <Private>False</Private>
         </Reference>
         <Reference Include="UnityEngine.AssetBundleModule">
           <HintPath>..\..\lc-ref\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
-	  <Private>false</Private>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="UnityEngine.AudioModule">
+          <HintPath>..\..\lc-ref\Managed\UnityEngine.AudioModule.dll</HintPath>
+          <Private>False</Private>
         </Reference>
         <Reference Include="Unity.Netcode.Components">
           <HintPath>..\..\lc-ref\Managed\Unity.Netcode.Components.dll</HintPath>
-	  <Private>false</Private>
+          <Private>False</Private>
         </Reference>
         <Reference Include="Unity.Netcode.Runtime">
           <HintPath>..\..\lc-ref\Managed\Unity.Netcode.Runtime.dll</HintPath>
-	  <Private>false</Private>
+          <Private>False</Private>
         </Reference>
         <Reference Include="Unity.Networking.Transport">
           <HintPath>..\..\lc-ref\Managed\Unity.Networking.Transport.dll</HintPath>
-	  <Private>false</Private>
+          <Private>False</Private>
         </Reference>
     </ItemGroup>
 </Project>

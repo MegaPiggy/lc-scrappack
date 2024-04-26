@@ -4,36 +4,37 @@ namespace ScrapPack
 {
     public class ScrapPack : GrabbableObject
     {
-	//public GameObject fireEffect;
+        //public GameObject fireEffect;
 
-	//public AudioClip startJetpackSFX;
+        //public AudioClip startJetpackSFX;
 
-	//public AudioClip jetpackWarningBeepSFX;
+        //public AudioClip jetpackWarningBeepSFX;
 
-	//public ParticleSystem smokeTrailParticle;
+        //public ParticleSystem smokeTrailParticle;
 
-	//private PlayerControllerB previousPlayerHeldBy;
+        //private PlayerControllerB previousPlayerHeldBy;
 
-	//private float noiseInterval;
+        //private float noiseInterval;
 
-	//private RaycastHit rayHit;
+        //private RaycastHit rayHit;
 
-	public override void ItemActivate(bool used, bool buttonDown = true){
-	    base.ItemActivate(used, buttonDown);
-	    if (buttonDown) ActivateJetpack();
-	}
+        public override void ItemActivate(bool used, bool buttonDown = true)
+        {
+            base.ItemActivate(used, buttonDown);
+            if (buttonDown) ActivateJetpack();
+        }
 
-	//private void AfterJetpackImpulse(){
-	//    if (previousPlayerHeldBy.jetpackControls)
-	//	previousPlayerHeldBy.disablingJetpackControls = true;
-	//   smokeTrailParticle.Stop(withChildren: true, ParticleSystemStopBehavior.StopEmitting);
-	//}
+        //private void AfterJetpackImpulse(){
+        //    if (previousPlayerHeldBy.jetpackControls)
+        //	previousPlayerHeldBy.disablingJetpackControls = true;
+        //   smokeTrailParticle.Stop(withChildren: true, ParticleSystemStopBehavior.StopEmitting);
+        //}
 
-	private void ActivateJetpack()
-	{
-	    playerHeldBy.syncFullRotation = playerHeldBy.transform.eulerAngles;
-	    playerHeldBy.externalForces += Vector3.up * 100;
-	}
+        private void ActivateJetpack()
+        {
+            playerHeldBy.syncFullRotation = playerHeldBy.transform.eulerAngles;
+            playerHeldBy.externalForces += Vector3.up * 100;
+        }
         /*
 	public override void DiscardItem()
 	{
