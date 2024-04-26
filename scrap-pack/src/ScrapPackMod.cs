@@ -44,17 +44,18 @@ namespace ScrapPack
             item.creditsWorth = 0;
             item.canBeGrabbedBeforeGameStart = false;
             item.automaticallySetUsingPower = true;
+            item.automaticallySetUsingPower = false;
             item.allowDroppingAheadOfPlayer = true;
-            item.batteryUsage = 50;
+            item.batteryUsage = 1f/3f;
             item.weight = 1.5f;
             item.canBeInspected = false;
-            item.holdButtonUse = true;
+            item.itemIsTrigger = true;
             item.isDefensiveWeapon = false;
             item.isConductiveMetal = true;
             item.saveItemVariable = false;
             item.requiresBattery = true;
             item.twoHandedAnimation = true;
-            item.syncGrabFunction = false;
+            item.syncGrabFunction = true;
             item.syncInteractLRFunction = true;
             item.syncUseFunction = true;
             item.syncDiscardFunction = true;
@@ -67,6 +68,7 @@ namespace ScrapPack
             item.itemIcon = icon;
             prefab.GetComponent<GrabbableObject>().itemProperties = item;
             prefab.GetComponent<GrabbableObject>().insertedBattery = new Battery(false, 1);
+            prefab.GetComponent<GrabbableObject>().useCooldown = 1.25f;
             return item;
         }
 
