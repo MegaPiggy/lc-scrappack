@@ -64,6 +64,7 @@ namespace ScrapPack
             item.restingRotation = new Vector3(-90, 0, 90);
             item.spawnPrefab = prefab;
             prefab.GetComponent<GrabbableObject>().itemProperties = item;
+            prefab.GetComponent<GrabbableObject>().insertedBattery = new Battery(false, 1);
             return item;
         }
 
