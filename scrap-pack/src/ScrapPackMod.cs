@@ -20,6 +20,7 @@ namespace ScrapPack
         private static readonly Harmony harmony = new Harmony(modGUID);
         private static AssetBundle scrappackBundle;
         private static GameObject scrappackPrefab;
+        private static Sprite scrappackIcon;
         private static Item scrappackItem;
 
         private static TerminalNode CreateInfoNode(string name, string description)
@@ -32,7 +33,7 @@ namespace ScrapPack
             return node;
         }
 
-        private static Item MakeItem(GameObject prefab)
+        private static Item MakeItem(GameObject prefab, Sprite icon)
         {
             Item item = ScriptableObject.CreateInstance<Item>();
             DontDestroyOnLoad(item);
@@ -63,6 +64,7 @@ namespace ScrapPack
             item.rotationOffset = new Vector3(0, 0, 0);
             item.restingRotation = new Vector3(90, 0, 90);
             item.spawnPrefab = prefab;
+            item.itemIcon = icon;
             prefab.GetComponent<GrabbableObject>().itemProperties = item;
             prefab.GetComponent<GrabbableObject>().insertedBattery = new Battery(false, 1);
             return item;
@@ -74,8 +76,9 @@ namespace ScrapPack
 
             scrappackBundle = AssetBundle.LoadFromFile(Info.Location.Replace("scrappack.dll", "scrappack"));
             scrappackPrefab = scrappackBundle.LoadAsset<GameObject>("scrappack");
+            scrappackIcon = scrappackBundle.LoadAsset<Sprite>("ScrapPack");
             NetworkPrefabs.RegisterNetworkPrefab(scrappackPrefab);
-            scrappackItem = MakeItem(scrappackPrefab);
+            scrappackItem = MakeItem(scrappackPrefab, scrappackIcon);
             Items.RegisterShopItem(scrappackItem, price: 0, itemInfo: CreateInfoNode("Scrap Pack", "A jetpack made from scrap."));
 
             Logger.LogInfo($"Plugin {modName} is loaded with version {modVersion}!");

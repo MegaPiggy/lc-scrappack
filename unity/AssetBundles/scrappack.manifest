@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 1958847684
+CRC: 1397089406
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 8addd1d8bd8043eb6628bd5b10a4a189
+    Hash: 4884100bd1278b61b181311340f4660f
   TypeTreeHash:
     serializedVersion: 2
-    Hash: bab0c554fab73a2448797ade5cf32c28
+    Hash: b27f25070db912d51c6932f7757ded76
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 8addd1d8bd8043eb6628bd5b10a4a189
+    Hash: 4884100bd1278b61b181311340f4660f
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -38,7 +38,10 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 1fab87a9c5925e54586287797d25327d, type: 3}
 - Class: 115
   Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/ScrapPack.png
 - Assets/scrappack.prefab
 Dependencies: []
