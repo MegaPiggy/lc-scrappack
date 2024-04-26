@@ -25,6 +25,12 @@ namespace ScrapPack
 
         [Space(3f)]
         public bool grabbableToEnemies;
+
+        [Space(10f)]
+        public Transform backPart;
+        public Vector3 backPartPositionOffset;
+        public Vector3 backPartRotationOffset;
+
         //public GameObject fireEffect;
 
         //public AudioClip startJetpackSFX;

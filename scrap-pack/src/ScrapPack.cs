@@ -18,6 +18,10 @@ namespace ScrapPack
 
         //private RaycastHit rayHit;
 
+        public Transform backPart;
+        public Vector3 backPartPositionOffset;
+        public Vector3 backPartRotationOffset;
+
         public override void ItemActivate(bool used, bool buttonDown = true)
         {
             base.ItemActivate(used, buttonDown);
@@ -170,23 +174,29 @@ namespace ScrapPack
 			jetpackPlayingLowBatteryBeep = false;
 			jetpackBeepsAudio.Stop();
 		}
-	}
+	}*/
 
-	public override void LateUpdate()
-	{
-		base.LateUpdate();
-		if (playerHeldBy != null && isHeld)
-		{
-			backPart.position = playerHeldBy.lowerSpine.position;
-			backPart.rotation = playerHeldBy.lowerSpine.rotation;
-			base.transform.Rotate(backPartRotationOffset);
-			backPart.position = playerHeldBy.lowerSpine.position;
-			Vector3 vector = backPartPositionOffset;
-			vector = playerHeldBy.lowerSpine.rotation * vector;
-			backPart.position += vector;
-		}
-	}
+        public override void LateUpdate()
+        {
+            base.LateUpdate();
+            if (playerHeldBy != null && isHeld)
+            {
+                backPart.position = playerHeldBy.lowerSpine.position;
+                backPart.rotation = playerHeldBy.lowerSpine.rotation;
+                base.transform.Rotate(backPartRotationOffset);
+                backPart.position = playerHeldBy.lowerSpine.position;
+                Vector3 vector = backPartPositionOffset;
+                vector = playerHeldBy.lowerSpine.rotation * vector;
+                backPart.position += vector;
+            }
+			else
+            {
+                backPart.localPosition = Vector3.zero;
+                backPart.localEulerAngles = Vector3.zero;
+            }
+        }
 
+        /*
 	protected override void __initializeVariables()
 	{
 		base.__initializeVariables();
