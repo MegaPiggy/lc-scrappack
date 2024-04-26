@@ -58,7 +58,7 @@ MonoBehaviour:
   grabbableToEnemies: 0
   backPart: {fileID: 5583384362545172845}
   backPartPositionOffset: {x: 0, y: 0.25, z: -0.4}
-  backPartRotationOffset: {x: 20, y: 0, z: 0}
+  backPartRotationOffset: {x: -20, y: 0, z: 0}
 --- !u!114 &5124727572989088083
 MonoBehaviour:
   m_ObjectHideFlags: 0
