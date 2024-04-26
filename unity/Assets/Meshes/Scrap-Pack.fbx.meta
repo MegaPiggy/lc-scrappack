@@ -3,7 +3,27 @@ guid: b89aa0d5cb8e7e28fbe60d94e1d403e9
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MagnifyingGlass
+    second: {fileID: 2100000, guid: 211c6b5481cf8748899504a4880a5bd6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MagnifyingGlass.001
+    second: {fileID: 2100000, guid: 211c6b5481cf8748899504a4880a5bd6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PowerBoxTextures
+    second: {fileID: 2100000, guid: 82ae256ced6e13e4cbc2016281ff1fda, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: YellowChemicalBottle.001
+    second: {fileID: 2100000, guid: 65585ab182bd7b16ebc87ea458a83b24, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
