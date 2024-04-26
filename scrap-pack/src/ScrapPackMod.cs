@@ -59,7 +59,8 @@ namespace ScrapPack
             item.syncDiscardFunction = true;
             item.verticalOffset = 0.2f;
             item.grabAnim = "HoldJetpack";
-            item.positionOffset = new Vector3(0, 0, 0);
+            item.positionOffset = new Vector3(0, -0.2f, -1);
+            item.rotationOffset = new Vector3(0, 180, 0);
             item.restingRotation = new Vector3(-90, 0, 90);
             item.spawnPrefab = prefab;
             prefab.GetComponent<GrabbableObject>().itemProperties = item;
