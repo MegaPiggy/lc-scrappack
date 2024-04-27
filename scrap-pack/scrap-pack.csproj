@@ -34,6 +34,9 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+      <None Include="scrap-pack.csproj.user" />
+    </ItemGroup>
+    <ItemGroup>
 	<!-- <Reference Include="netstandard" /> -->
         <Reference Include="LethalLib">
           <HintPath>..\..\lc-ref\BepInEx\plugins\LethalLib\LethalLib.dll</HintPath>
