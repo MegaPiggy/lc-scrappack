@@ -23,8 +23,8 @@ namespace ScrapPack
         public Vector3 backPartPositionOffset;
         public Vector3 backPartRotationOffset;
 
-		public float upMultiplier = 25;
-		public float forwardMultiplier = 50;
+        public float upMultiplier = 25;
+        public float forwardMultiplier = 50;
 
         public override void ItemActivate(bool used, bool buttonDown = true)
         {
@@ -43,13 +43,13 @@ namespace ScrapPack
             if (playerHeldBy != null && !playerHeldBy.isPlayerDead)
             {
                 playerHeldBy.syncFullRotation = playerHeldBy.transform.eulerAngles;
-                playerHeldBy.externalForceAutoFade += (backPart.transform.up * upMultiplier) + (backPart.transform.forward * forwardMultiplier);
+                playerHeldBy.externalForceAutoFade += backPart.transform.up * upMultiplier + backPart.transform.forward * forwardMultiplier;
             }
         }
 
         public override void DiscardItem()
         {
-            Debug.Log($"Owner of jetpack?: {base.IsOwner}");
+            Debug.Log($"Owner of jetpack?: {IsOwner}");
             Debug.Log($"Is dead?: {playerHeldBy.isPlayerDead}");
             //if (base.IsOwner && playerHeldBy.isPlayerDead && !jetpackBroken && playerHeldBy.jetpackControls)
             //    ExplodeJetpackServerRpc();
@@ -192,7 +192,7 @@ namespace ScrapPack
             {
                 backPart.position = playerHeldBy.lowerSpine.position;
                 backPart.rotation = playerHeldBy.lowerSpine.rotation;
-                base.transform.Rotate(backPartRotationOffset);
+                transform.Rotate(backPartRotationOffset);
                 backPart.position = playerHeldBy.lowerSpine.position;
                 Vector3 vector = backPartPositionOffset;
                 vector = playerHeldBy.lowerSpine.rotation * vector;
@@ -240,7 +240,7 @@ namespace ScrapPack
 		}
 	}*/
 
-        protected override string __getTypeName()
+        public override string __getTypeName()
         {
             return "ScrapPack";
         }

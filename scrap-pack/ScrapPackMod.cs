@@ -46,7 +46,7 @@ namespace ScrapPack
             item.automaticallySetUsingPower = true;
             item.automaticallySetUsingPower = false;
             item.allowDroppingAheadOfPlayer = true;
-            item.batteryUsage = 1f/3f;
+            item.batteryUsage = 1f / 3f;
             item.weight = 1.5f;
             item.canBeInspected = false;
             item.itemIsTrigger = true;
